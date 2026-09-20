@@ -44,9 +44,9 @@
   },
   "devDependencies": {
     "@testing-library/react": "^16.3.0",
-    "@types/react": "^19.0.0",
+    "@types/react": "^19.3.0",
     "@types/react-reconciler": "^0.32.0",
-    "react": "^19.0.0",
+    "react": "^19.3.0",
     "react-test-renderer": "^19.0.0",
     "typescript": "^5.8.2",
     "vite": "^7.2.2",
