@@ -20,7 +20,7 @@
   "devDependencies": {
     "@types/express": "^5.0.0",
     "@types/micromatch": "^4.0.9",
-    "tsx": "^4.19.2",
+    "tsx": "^4.23.13",
     "typescript": "^5.8.2"
   }
 }
