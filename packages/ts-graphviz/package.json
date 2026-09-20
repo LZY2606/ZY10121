@@ -1,0 +1,77 @@
+{
+  "name": "ts-graphviz",
+  "version": "3.0.7",
+  "description": "Graphviz library for TypeScript",
+  "keywords": [
+    "graphviz",
+    "dot"
+  ],
+  "homepage": "https://ts-graphviz.github.io/ts-graphviz/",
+  "bugs": {
+    "url": "https://github.com/ts-graphviz/ts-graphviz/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ts-graphviz/ts-graphviz.git",
+    "directory": "packages/ts-graphviz"
+  },
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/ts-graphviz"
+    },
+    {
+      "type": "opencollective",
+      "url": "https://opencollective.com/ts-graphviz"
+    }
+  ],
+  "license": "MIT",
+  "author": "kamiazya <yuki@kamiazya.tech>",
+  "sideEffects": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/ts-graphviz.ts",
+    "./ast": "./src/ast.ts",
+    "./adapter": "./src/adapter.ts",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@ts-graphviz/adapter": "workspace:^",
+    "@ts-graphviz/ast": "workspace:^",
+    "@ts-graphviz/common": "workspace:^",
+    "@ts-graphviz/core": "workspace:^"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.2",
+    "vite": "^7.2.2",
+    "vite-plugin-dts": "^4.5.3"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true,
+    "exports": {
+      ".": {
+        "types": "./lib/ts-graphviz.d.ts",
+        "default": "./lib/ts-graphviz.js"
+      },
+      "./ast": {
+        "types": "./lib/ast.d.ts",
+        "default": "./lib/ast.js"
+      },
+      "./adapter": {
+        "types": "./lib/adapter.d.ts",
+        "default": "./lib/adapter.js"
+      },
+      "./package.json": "./package.json"
+    },
+    "module": "./lib/ts-graphviz.js",
+    "types": "lib/ts-graphviz.d.ts"
+  },
+  "runkitExampleFilename": "example/runkit.cjs"
+}

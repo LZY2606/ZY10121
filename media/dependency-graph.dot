@@ -1,0 +1,44 @@
+digraph "dependency_graph" {
+  newrank = true;
+  rankdir = "LR";
+  edge [
+    dir = "back";
+  ];
+  node [
+    shape = "none";
+  ];
+  "@ts-graphviz/adapter" [
+    label = <<table><tr><td port="name" bgcolor="#f0f0f0" align="CENTER">@ts-graphviz/adapter</td></tr><tr><td port="description" align="CENTER">Graphviz Runtime adapters for Cross Platform</td></tr></table>>;
+    URL = "https://www.npmjs.com/package/@ts-graphviz/adapter";
+  ];
+  "@ts-graphviz/ast" [
+    label = <<table><tr><td port="name" bgcolor="#f0f0f0" align="CENTER">@ts-graphviz/ast</td></tr><tr><td port="description" align="CENTER">Graphviz AST(Abstract Syntax Tree) Utilities</td></tr></table>>;
+    URL = "https://www.npmjs.com/package/@ts-graphviz/ast";
+  ];
+  "@ts-graphviz/common" [
+    label = <<table><tr><td port="name" bgcolor="#f0f0f0" align="CENTER">@ts-graphviz/common</td></tr><tr><td port="description" align="CENTER">Graphviz Types and Utilities</td></tr></table>>;
+    URL = "https://www.npmjs.com/package/@ts-graphviz/common";
+  ];
+  "@ts-graphviz/core" [
+    label = <<table><tr><td port="name" bgcolor="#f0f0f0" align="CENTER">@ts-graphviz/core</td></tr><tr><td port="description" align="CENTER">Graphviz Models for Object-Oriented Programming</td></tr></table>>;
+    URL = "https://www.npmjs.com/package/@ts-graphviz/core";
+  ];
+  "@ts-graphviz/react" [
+    label = <<table><tr><td port="name" bgcolor="#f0f0f0" align="CENTER">@ts-graphviz/react</td></tr><tr><td port="description" align="CENTER">Graphviz-dot Renderer for React.</td></tr></table>>;
+    URL = "https://www.npmjs.com/package/@ts-graphviz/react";
+  ];
+  "ts-graphviz" [
+    label = <<table><tr><td port="name" bgcolor="#f0f0f0" align="CENTER">ts-graphviz</td></tr><tr><td port="description" align="CENTER">Graphviz library for TypeScript</td></tr></table>>;
+    URL = "https://www.npmjs.com/package/ts-graphviz";
+  ];
+  "@ts-graphviz/common" -> "@ts-graphviz/adapter";
+  "@ts-graphviz/common" -> "@ts-graphviz/ast";
+  "@ts-graphviz/ast" -> "@ts-graphviz/core";
+  "@ts-graphviz/common" -> "@ts-graphviz/core";
+  "@ts-graphviz/common" -> "@ts-graphviz/react";
+  "ts-graphviz" -> "@ts-graphviz/react";
+  "@ts-graphviz/adapter" -> "ts-graphviz";
+  "@ts-graphviz/ast" -> "ts-graphviz";
+  "@ts-graphviz/common" -> "ts-graphviz";
+  "@ts-graphviz/core" -> "ts-graphviz";
+}

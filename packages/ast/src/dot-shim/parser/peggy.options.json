@@ -1,0 +1,13 @@
+{
+  "allowedStartRules": [
+    "Dot",
+    "Graph",
+    "Subgraph",
+    "Node",
+    "Edge",
+    "AttributeList",
+    "Attribute",
+    "ClusterStatements"
+  ],
+  "format": "es"
+}

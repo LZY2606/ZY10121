@@ -1,0 +1,22 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "name": "ts-graphviz",
+  "out": "./doc",
+  "entryPointStrategy": "packages",
+  "entryPoints": [
+    "packages/*"
+  ],
+  "tsconfig": "./tsconfig.doc.json",
+  "excludePrivate": true,
+  "exclude": [
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/*.spec.ts",
+    "**/*.spec.tsx",
+    "**/__tests__/**",
+    "**/__mocks__/**",
+    "**/vite.config.ts",
+    "**/vitest.config.ts",
+    "**/examples/**"
+  ]
+}
