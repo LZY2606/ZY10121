@@ -187,6 +187,39 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors)
 specification. Contributions of any kind welcome!
 
+
+## Minimal patch plans (opt-in)
+
+When you parse existing DOT into the object model, mutate it, and want to write
+the result back without reformatting the whole document, open a patch session:
+
+```ts
+import { openPatchSession } from '@ts-graphviz/ast';
+
+const session = openPatchSession(dotSource);
+session.model
+  .getNode('a')
+  ?.attributes.set('color' as never, 'blue' as never);
+
+const plan = session.plan();
+// plan.operations: non-overlapping { range, replacement, target, reason,
+// preconditionHash } entries. Comments, blank lines, quote style and all
+// untouched statements are preserved byte-for-byte.
+
+if (plan.status === 'ok') {
+  const patched = session.apply().output;
+} else {
+  // plan.ambiguities lists every candidate declaration when a model object
+  // (e.g. a repeatedly declared node id) maps to more than one source range.
+  // Pass `resolveAmbiguity` to openPatchSession to choose one.
+}
+```
+
+Applying a plan verifies the source hash and every per-range hash first; if the
+text changed since planning, a `PatchPreconditionError` is thrown and no edit
+is applied. When local edits cannot be kept disjoint, the plan falls back to
+rewriting the nearest common serializable ancestor.
+
 ## Changelog 📜
 
 See [CHANGELOG.md](https://github.com/ts-graphviz/ts-graphviz/blob/main/packages/ast/CHANGELOG.md) for more details.
